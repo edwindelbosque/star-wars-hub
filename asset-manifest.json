@@ -1,29 +1,29 @@
 {
   "files": {
-    "main.css": "/swapi-trivia/static/css/main.fa3f97e5.chunk.css",
-    "main.js": "/swapi-trivia/static/js/main.14d3f5c2.chunk.js",
-    "main.js.map": "/swapi-trivia/static/js/main.14d3f5c2.chunk.js.map",
-    "runtime-main.js": "/swapi-trivia/static/js/runtime-main.ac423d25.js",
-    "runtime-main.js.map": "/swapi-trivia/static/js/runtime-main.ac423d25.js.map",
-    "static/js/2.3f2b180c.chunk.js": "/swapi-trivia/static/js/2.3f2b180c.chunk.js",
-    "static/js/2.3f2b180c.chunk.js.map": "/swapi-trivia/static/js/2.3f2b180c.chunk.js.map",
-    "index.html": "/swapi-trivia/index.html",
-    "precache-manifest.c456ad27f2129f7f99aa4780f9440879.js": "/swapi-trivia/precache-manifest.c456ad27f2129f7f99aa4780f9440879.js",
-    "service-worker.js": "/swapi-trivia/service-worker.js",
-    "static/css/main.fa3f97e5.chunk.css.map": "/swapi-trivia/static/css/main.fa3f97e5.chunk.css.map",
-    "static/media/1.jpg": "/swapi-trivia/static/media/1.6b7da538.jpg",
-    "static/media/2.jpg": "/swapi-trivia/static/media/2.8b3cf9f2.jpg",
-    "static/media/3.jpg": "/swapi-trivia/static/media/3.36c356ae.jpg",
-    "static/media/4.jpg": "/swapi-trivia/static/media/4.d0e73923.jpg",
-    "static/media/5.jpg": "/swapi-trivia/static/media/5.df37c5e4.jpg",
-    "static/media/6.jpg": "/swapi-trivia/static/media/6.1568d5fe.jpg",
-    "static/media/7.jpg": "/swapi-trivia/static/media/7.c7153bc9.jpg",
-    "static/media/Quote.scss": "/swapi-trivia/static/media/background-image.390e1e3e.jpg"
+    "main.css": "/star-wars-hub/static/css/main.316f09ab.chunk.css",
+    "main.js": "/star-wars-hub/static/js/main.5d009f27.chunk.js",
+    "main.js.map": "/star-wars-hub/static/js/main.5d009f27.chunk.js.map",
+    "runtime-main.js": "/star-wars-hub/static/js/runtime-main.af3f2537.js",
+    "runtime-main.js.map": "/star-wars-hub/static/js/runtime-main.af3f2537.js.map",
+    "static/js/2.3f2b180c.chunk.js": "/star-wars-hub/static/js/2.3f2b180c.chunk.js",
+    "static/js/2.3f2b180c.chunk.js.map": "/star-wars-hub/static/js/2.3f2b180c.chunk.js.map",
+    "index.html": "/star-wars-hub/index.html",
+    "precache-manifest.6d0c02d8af12a11402350a589f6e7106.js": "/star-wars-hub/precache-manifest.6d0c02d8af12a11402350a589f6e7106.js",
+    "service-worker.js": "/star-wars-hub/service-worker.js",
+    "static/css/main.316f09ab.chunk.css.map": "/star-wars-hub/static/css/main.316f09ab.chunk.css.map",
+    "static/media/1.jpg": "/star-wars-hub/static/media/1.6b7da538.jpg",
+    "static/media/2.jpg": "/star-wars-hub/static/media/2.8b3cf9f2.jpg",
+    "static/media/3.jpg": "/star-wars-hub/static/media/3.36c356ae.jpg",
+    "static/media/4.jpg": "/star-wars-hub/static/media/4.d0e73923.jpg",
+    "static/media/5.jpg": "/star-wars-hub/static/media/5.df37c5e4.jpg",
+    "static/media/6.jpg": "/star-wars-hub/static/media/6.1568d5fe.jpg",
+    "static/media/7.jpg": "/star-wars-hub/static/media/7.c7153bc9.jpg",
+    "static/media/Quote.scss": "/star-wars-hub/static/media/background-image.390e1e3e.jpg"
   },
   "entrypoints": [
-    "static/js/runtime-main.ac423d25.js",
+    "static/js/runtime-main.af3f2537.js",
     "static/js/2.3f2b180c.chunk.js",
-    "static/css/main.fa3f97e5.chunk.css",
-    "static/js/main.14d3f5c2.chunk.js"
+    "static/css/main.316f09ab.chunk.css",
+    "static/js/main.5d009f27.chunk.js"
   ]
 }
