@@ -12,7 +12,7 @@ For this project, we wanted to use the popular Star Wars RESTful API '**SWAPI-Bo
 
 The purpose of this project was to get more comfortable using new tools and keep practicing routing, props, state, testing, fetching nested promises, and asynchorous JS in general.
 
-### Check it out in GitHub Pages [here](https://slkarsh.github.io/swapi-trivia/)!
+### Check it out in GitHub Pages [here](https://edwindelbosque.github.io/star-wars-hub/#/)!
 
 ## Screenshots
 
