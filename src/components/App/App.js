@@ -20,20 +20,26 @@ class App extends Component {
     }
   }
 
-  componentDidMount = () => {
-    fetchFilms().then(response => this.setState({
-      films: response
-    }))
+  componentDidMount = async () => {
+    try {
+      const films = await fetchFilms();
+      this.setState({ films: films });
+    } catch (error) {
+      console.warning('error', error);
+    }
   }
 
   addUserInfo = (userData) => {
     this.setState({ userInfo: userData })
   }
 
-  getDetails = (id) => {
-    return getCharacters(`https://swapi.co/api/films/${id}`)
-      .then(response => this.setState({ currentCharacters: response }))
-      .catch(error => console.log('error', error))
+  getDetails = async (id) => {
+    try {
+      const characters = await getCharacters(`https://swapi.co/api/films/${id}`);
+      this.setState({ currentCharacters: characters })
+    } catch (error) {
+      console.warning('error', error);
+    }
   }
 
   checkFavorites = (characterObject) => {

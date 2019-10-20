@@ -1,87 +1,77 @@
-export const fetchFilms = () => {
-  return fetch('https://swapi.co/api/films/')
-    .then(response => response.json())
-    .then(films => {
-      const filmData = films.results.map((film, index) => {
-        const { title, episode_id, release_date, opening_crawl } = film;
-        var filmId
-        if (film.episode_id >= 4 && film.episode_id <= 6) {
-          filmId = film.episode_id - 3
-        } else if (film.episode_id >= 1 && film.episode_id <= 3) {
-          filmId = film.episode_id + 3
-        } else {
-          filmId = film.episode_id
-        }
-        return { title, episode_id, release_date, filmId, opening_crawl }
-      }).sort((a, b) => a.episode_id - b.episode_id)
-      return filmData;
-    })
+export const fetchFilms = async () => {
+  const response = await fetch('https://swapi.co/api/films/');
+  const films = await response.json();
+  return await films.results.map((film) => {
+    const { title, episode_id, release_date, opening_crawl } = film;
+    var filmId
+    if (film.episode_id >= 4 && film.episode_id <= 6) {
+      filmId = film.episode_id - 3
+    } else if (film.episode_id >= 1 && film.episode_id <= 3) {
+      filmId = film.episode_id + 3
+    } else {
+      filmId = film.episode_id
+    }
+    return { title, episode_id, release_date, filmId, opening_crawl }
+  }).sort((a, b) => a.episode_id - b.episode_id)
 }
 
-export const getCharacters = filmUrl => {
-  return fetch(filmUrl)
-    .then(response => response.json())
-    .then(response => response.characters)
-    .then(response => response.splice(0, 10))
-    .then(film => {
-      const characterInfo = film.map(character => {
-        return getCharacter(character).then(character => ({
-          name: character[0],
-          homeworld: character[1],
-          species: character[2],
-          relatedFilms: character[3]
-        }))
-      })
-      return Promise.all(characterInfo)
-    })
-}
-
-export const getCharacter = characterUrl => {
-  return fetch(characterUrl)
-    .then(response => response.json())
-    .then(character => {
-      const { name } = character
-      const home = getHomeworld(character.homeworld)
-      const speciesName = getSpeciesData(character.species).then(x => [...x])
-      const relatedMovies = getRelatedFilms(character.films)
-      return Promise.all([name, home, speciesName, relatedMovies])
-    })
-}
-
-export const getHomeworld = homeworldUrl => {
-  return fetch(homeworldUrl)
-    .then(response => response.json())
-    .then(homeworld => {
-      const { name, population } = homeworld
-      return { name, population }
-    })
-}
-
-export const getSpeciesData = speciesArray => {
-  const speciesInfo = speciesArray.map(speciesType => {
-    return getSpecies(speciesType).then(name => name)
+export const getCharacters = async (filmUrl) => {
+  const response = await fetch(filmUrl);
+  const data = await response.json();
+  const characters = data.characters.splice(0, 10);
+  const charactersInfo = characters.map(character => {
+    return getCharacter(character).then(character => ({
+      name: character[0],
+      homeworld: character[1],
+      species: character[2],
+      relatedFilms: character[3]
+    }))
   })
-  return Promise.all(speciesInfo)
+  return Promise.all(charactersInfo)
 }
 
-
-export const getSpecies = speciesUrl => {
-  return fetch(speciesUrl)
-    .then(response => response.json())
-    .then(species => species.name)
+export const getCharacter = async (characterUrl) => {
+  const response = await fetch(characterUrl);
+  const character = await response.json();
+  const { name, homeworld, species, films } = character;
+  const home = getHomeworld(homeworld);
+  const speciesName = getSpeciesData(species);
+  const relatedMovies = getRelatedFilms(films);
+  return Promise.all([name, home, speciesName, relatedMovies]);
 }
 
+export const getHomeworld = async (homeworldUrl) => {
+  const response = await fetch(homeworldUrl);
+  const homeworld = await response.json();
+  const { name, population } = homeworld;
+  return { name, population };
+}
 
-export const getRelatedFilms = filmsArray => {
-  const relatedFilms = filmsArray.map(film => {
-    return getFilmName(film).then(title => title)
+export const getSpeciesData = async (speciesArray) => {
+  const speciesInfo = await speciesArray.map(speciesType => {
+    return getSpecies(speciesType);
   })
-  return Promise.all(relatedFilms)
+  return Promise.all(speciesInfo);
 }
 
 
-export const getFilmName = filmUrl => {
-  return fetch(filmUrl)
-    .then(response => response.json())
-    .then(film => film.title)
+export const getSpecies = async (speciesUrl) => {
+  const response = await fetch(speciesUrl);
+  const species = await response.json();
+  return species.name;
+}
+
+
+export const getRelatedFilms = async (filmsArray) => {
+  const relatedFilms = await filmsArray.map(film => {
+    return getFilmName(film);
+  })
+  return Promise.all(relatedFilms);
+}
+
+
+export const getFilmName = async (filmUrl) => {
+  const response = await fetch(filmUrl);
+  const film = await response.json();
+  return film.title;
 }
