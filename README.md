@@ -16,7 +16,7 @@ The purpose of this project was to get more comfortable using new tools and keep
 
 ## Screenshots
 
-![](https://user-images.githubusercontent.com/48811985/66860125-15121300-ef7c-11e9-90a5-0969294c1515.gif)
+<img width="1219" src="https://user-images.githubusercontent.com/48811985/67168456-53506d80-f394-11e9-870a-1b9b44f7823a.png">
 
 <img width="1440" src="https://user-images.githubusercontent.com/48811985/66860177-2e1ac400-ef7c-11e9-8f2a-e4dd788582f0.png">
 
